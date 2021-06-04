@@ -1,0 +1,19 @@
+.ShoutOutForm{
+    background-color: rgb(13, 73, 93);
+    width: 80%;
+    margin: 10%;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+.ShoutOutForm p{
+    color: indianred;
+    font-weight: bold;
+}
+.ShoutOutForm label{
+    margin: 5px;
+}
+.ShoutOutForm button{
+    background-color: lightblue;
+    font-weight: bold;
+    border-radius: 8px;
+}

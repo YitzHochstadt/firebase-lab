@@ -1,0 +1,1 @@
+export { default as shoutOuts } from "./routes/shoutOuts"
