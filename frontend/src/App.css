@@ -2,3 +2,6 @@ body{
     background-color: lightpink;
     margin: 0;
 }
+p{
+    font-weight: bold;
+}

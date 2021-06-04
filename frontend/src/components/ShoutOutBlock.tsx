@@ -10,7 +10,7 @@ function ShoutOutBlock({shoutOut}: Props){
         <div className="ShoutOutBlock">
             <h3>Shout out to {shoutOut.to}</h3>
             <p className="from">- from {shoutOut.from}</p>
-            <p>{shoutOut.message}</p>
+            <p className="ShoutOutBlock_message">{shoutOut.message}</p>
         </div>
     )
 }

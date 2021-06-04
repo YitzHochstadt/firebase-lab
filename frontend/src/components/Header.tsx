@@ -9,9 +9,12 @@ function Header(){
 
     return(
         <header className="Header">
-            <button onClick={signInWithGoogle}>Sign in with Google</button>
+            <h1>Shout It Out!</h1>
+            {user ? <div>
+                <p className="Header_welcome">Welcome {user.displayName}!</p>
             <button onClick={signOut}>Sign out</button>
-            {user && <div>Welcome {user.displayName}!</div>}
+            </div>
+            : <button onClick={signInWithGoogle}>Sign in with Google</button>}
         </header>
     );
 }

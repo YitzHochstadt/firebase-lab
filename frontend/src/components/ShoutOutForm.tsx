@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
+import { AuthContext } from '../context/authContext';
 import ShoutOut from '../model/ShoutOut';
 import './ShoutOutForm.css';
 
@@ -8,20 +9,20 @@ interface Props{
 
 function ShoutOutForm({onSubmit}: Props){
     const [to, setTo] = useState("");
-    const [from, setFrom] = useState("");
     const [message, setMessage] = useState("");
+
+    const {user} = useContext(AuthContext);
 
     function handleSubmit(e:FormEvent):void{
         e.preventDefault();
         const shoutOut: ShoutOut = {
             to: to,
-            from: from,
+            from: user?.displayName,
             message: message
         }
         onSubmit(shoutOut);
 
         setTo("");
-        setFrom("");
         setMessage("");
     }
 
@@ -31,9 +32,9 @@ function ShoutOutForm({onSubmit}: Props){
                 <label htmlFor="ShoutOutForm_to">To</label>
                 <input id="ShoutOutForm_to" value={to} onChange={e => setTo(e.target.value)} required />
             </p>
+            <p>From</p>
             <p>
-                <label htmlFor="ShoutOutForm_from">From</label>
-                <input id="ShoutOutForm_from" value={from} onChange={e => setFrom(e.target.value)} required />
+                {user && <div>- {user.displayName}</div>}
             </p>
             <p>
                 <label htmlFor="ShoutOutForm_message">Message</label>
