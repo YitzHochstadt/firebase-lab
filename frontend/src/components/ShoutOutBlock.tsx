@@ -3,9 +3,10 @@ import './ShoutOutBlock.css';
 
 interface Props{
     shoutOut: ShoutOut;
+    onDelete: () => void;
 }
 
-function ShoutOutBlock({shoutOut}: Props){
+function ShoutOutBlock({shoutOut, onDelete}: Props){
     return(
         <div className="ShoutOutBlock">
             <h3>Shout out to {shoutOut.to}</h3>
@@ -14,6 +15,7 @@ function ShoutOutBlock({shoutOut}: Props){
             {!!shoutOut.profilePhoto && <p>
             <img className="ShoutOutBlock_photo" src={shoutOut.profilePhoto} alt="" />
             </p>}
+            <button onClick={onDelete} className="ShoutOutBlock_delete">You can still take it back!</button>
         </div>
     )
 }

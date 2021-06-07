@@ -8,12 +8,26 @@
 .ShoutOutForm p{
     color: indianred;
     font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 .ShoutOutForm label{
-    margin: 5px;
+    display: block;
+}
+.ShoutOutForm input,
+.ShoutOutForm textarea{
+    width: 90%;
 }
 .ShoutOutForm button{
     background-color: lightblue;
     font-weight: bold;
     border-radius: 8px;
+    color: rgb(13, 73, 93);
+    border: 2px solid rgb(13, 73, 93);
+    width: 85px;
+}
+.ShoutOutForm button:hover{
+    background-color: lightpink;
+    transition: background-color .2s;
 }

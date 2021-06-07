@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/authContext';
 import { signInWithGoogle } from '../firebaseConfig';
 import ShoutOut from '../model/ShoutOut';
-import { allShoutOuts, newShoutOut } from '../service/ShoutOutService';
+import { allShoutOuts, deleteShoutOut, newShoutOut } from '../service/ShoutOutService';
 import Header from './Header';
 import ShoutOutBlock from './ShoutOutBlock';
 import ShoutOutForm from './ShoutOutForm';
@@ -29,6 +29,10 @@ function ShoutOutMain(){
         newShoutOut(shoutOut).then(loadShoutOuts);
     }
 
+    function handleDeleteShoutOut(shoutOutId: string): void {
+        deleteShoutOut(shoutOutId).then(loadShoutOuts);
+    }
+
     return(
         <div className="ShoutOutMain">
             <Header/>
@@ -36,7 +40,8 @@ function ShoutOutMain(){
             { !shoutOutsLoaded ?
             <p className="ShoutOutMain_message">Loading...</p>
             : shoutOuts.map(eachShoutOut => 
-            <ShoutOutBlock key={eachShoutOut._id} shoutOut={eachShoutOut}/>
+            <ShoutOutBlock key={eachShoutOut._id} shoutOut={eachShoutOut}
+            onDelete={() => handleDeleteShoutOut(eachShoutOut._id!)}/>
             )}
             <h2 className="ShoutOutMain_add">Add a Shout Out</h2>
             { user ?

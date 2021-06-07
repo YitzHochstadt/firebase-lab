@@ -7,6 +7,25 @@
     display: inline-block;
     background-color: indianred;
 }
+.ShoutOutBlock_delete{
+    background-color: lightblue;
+    font-weight: bold;
+    border-radius: 8px;
+    color: rgb(13, 73, 93);
+    border: 2px solid rgb(13, 73, 93);
+    width: 95%;
+    height: 25px;
+    margin-left: 2.5%;
+    margin-bottom: 10px;
+}
+.ShoutOutBlock_delete:hover{
+    background-color: lightpink;
+    transition: background-color, color, border-color .5s;
+}
+img{
+    width: 95%;
+    margin-left: 2.5%;
+}
 .ShoutOutBlock h3{
     color:rgb(13, 73, 93);
     padding: 0;

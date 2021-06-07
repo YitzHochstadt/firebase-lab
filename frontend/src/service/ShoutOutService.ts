@@ -13,3 +13,7 @@ export function allShoutOuts():Promise<ShoutOut[]> {
 export function newShoutOut(shoutOut: ShoutOut):Promise<ShoutOut> {
     return axios.post(baseUrl, shoutOut).then(res => res.data);
 }
+
+export function deleteShoutOut(shoutOutId: string):Promise<void> {
+  return axios.delete(`${baseUrl}/${encodeURIComponent(shoutOutId)}`);
+}
