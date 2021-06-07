@@ -2,5 +2,6 @@ export default interface ShoutOut{
     _id?: string;
     to:string;
     from:string|undefined|null;
-    message:string;  
+    message:string;
+    profilePhoto?:string;
 }

@@ -34,7 +34,7 @@ function ShoutOutMain(){
             <Header/>
             <h2>All Shout Outs</h2>
             { !shoutOutsLoaded ?
-            <p className="StudentList__message">Loading...</p>
+            <p className="ShoutOutMain_message">Loading...</p>
             : shoutOuts.map(eachShoutOut => 
             <ShoutOutBlock key={eachShoutOut._id} shoutOut={eachShoutOut}/>
             )}
